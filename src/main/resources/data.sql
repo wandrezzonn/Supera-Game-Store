@@ -15,3 +15,5 @@ INSERT INTO product(name,price,score,image) values('Shards of Darkness','71.94',
 INSERT INTO product(name,price,score,image) values('Terra Média: Sombras de Mordo','79.99',50,'terra-media-sombras-de-mordor.png');
 INSERT INTO product(name,price,score,image) values('FIFA 18','195.39',325,'fifa-18.png');
 INSERT INTO product(name,price,score,image) values('Horizon Zero Dawn','115.8',290,'horizon-zero-dawn.png');
+INSERT INTO product(name,price,score,image) values('Grand Theft Auto V','69.99',350,'grand-theft-auto5.png');
+INSERT INTO product(name,price,score,image) values('Cyberpunk 2077','179.90',90,'cyberpunk-2077.png');
