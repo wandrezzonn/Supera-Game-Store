@@ -7,4 +7,40 @@ Supera Game Store - Avaliação Java
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
 - [H2 Database](https://www.h2database.com/html/main.html)
 
+### Funcionalidades
+- Listar todos os produtos
+    - Adicionar ou remover produtos do carrinho de compras.
+     - Verificar checkout: valor total da compra, quantidade de itens, valor do frete, produtos no carrinho
+     
+### Endpoints para requisições  
+##### Metodo HTTP suportado GET
+#### Lista todos os prududos limitado a 15.
+Alteração para mais ou para menos poderá ser realizada na classe PageableConfiguration.java
+* /products
+#### Lista todos os produtos ordenado por preço.
+* /products?sort=price
+#### Lista todos os produtos por preço na ordem decrecente.
+* /products?sort=price,desc
+#### Lista todos os produtos por nome na ordem alfabética.
+* /products?sort=name
+#### Lista todos os produtos por nome na ordem decrecente alfabética.
+* /products?sort=name,desc
+#### Lista todos os produtos por score/popularidade.
+* /products?sort=score
+#### Lista todos os produtos por score/popularidade na ordem decrecente.
+* /products?sort=score,desc
+#### Adiciona um produto no carrinho pelo id (tipo inteiro).
+Exemplo: /products/add/1
+* /products/add/id
+#### Remove um produto do carrinho pelo id (tipo inteiro).
+Exemplo: /products/shoppingcart/1
+* /products/shoppingcart/id
+#### Mostra todos os produtos do carrinho, valor total da compra, valor total do frete, quantidade de produtos no carrinho.
+* /products/shoppingcart/checkout
 
+#### Paginação ('page = 0' é a página inicial, 'size = 5' para limitar a quantidade de produtos a serem exibidos)
+* /products?page=0&size=5
+#### Paginação (Acrescentando 'sort=price' será paginado e classificado por preço na ordem crescente)
+* /products?page=0&size=5&sort=price
+#### Paginação (Acrescentando 'sort=price,desc' será paginado e classificado por preço na ordem decrecente)
+* /products?page=0&size=5&sort=price,desc
