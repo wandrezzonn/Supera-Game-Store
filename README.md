@@ -48,3 +48,5 @@ Exemplo: /products/shoppingcart/1
 * /products?page=0&size=5&sort=price
 #### Paginação (Acrescentando 'sort=price,desc' será paginado e classificado por preço na ordem decrecente)
 * /products?page=0&size=5&sort=price,desc
+
+Uso do Framework Spring Boot no projeto para ganho de tempo e produtividade no desenvolvimento da API.
