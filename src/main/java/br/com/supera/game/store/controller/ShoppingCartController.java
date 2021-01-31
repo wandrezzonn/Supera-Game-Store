@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.supera.game.store.util.Checkout;
 import br.com.supera.game.store.util.ShoppingCart;
 import br.com.supera.game.store.util.ShoppingCartActions;
 
@@ -19,6 +20,8 @@ public class ShoppingCartController {
 	@Autowired
 	private ShoppingCartActions actions;
 	
+	
+	
 	@GetMapping("/shoppingcart")
 	public ResponseEntity<List<ShoppingCart>> shoppingCart(){
 		
@@ -28,6 +31,12 @@ public class ShoppingCartController {
 	@GetMapping("/shoppingcart/{idProduct}")
 	public ResponseEntity<List<ShoppingCart>> removeProduct(@PathVariable("idProduct") Long idProduct){
 		return actions.removeProduct(idProduct);
+		
+	}
+	
+	@GetMapping("/shoppingcart/checkout")
+	public Checkout checkout() {
+		return new Checkout(actions.myShoppingCart());
 		
 	}
 
