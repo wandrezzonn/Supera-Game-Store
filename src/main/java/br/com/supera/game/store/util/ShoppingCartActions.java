@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import br.com.supera.game.store.model.Product;
@@ -15,17 +16,14 @@ import br.com.supera.game.store.service.ProductService;
 public class ShoppingCartActions {
 
 	private BigDecimal freight = new BigDecimal("10.00");
-	@Autowired
-	ProductService productService;
+	private List<ShoppingCart> shoppingCartList = new ArrayList<ShoppingCart>();
+	
+	@Autowired private ProductService productService;
 
-	public ShoppingCartActions() {
+	public ShoppingCartActions() {}
 
-	}
-
-	public List<ShoppingCart> add(Long idProduct) {
+	public ResponseEntity<List<ShoppingCart>> add(Long idProduct) {
 		Optional<Product> product = productService.findById(idProduct);
-		List<ShoppingCart> shoppingCartList = new ArrayList<ShoppingCart>();
-
 		if (product.isPresent()) {
 			ShoppingCart shoppingCart = new ShoppingCart();
 			shoppingCart.setProducts(product.get());
@@ -39,9 +37,10 @@ public class ShoppingCartActions {
 			}
 
 			shoppingCartList.add(shoppingCart);
+			return ResponseEntity.ok(shoppingCartList);
 		}
 
-		return shoppingCartList;
+		return ResponseEntity.notFound().build();
 
 	}
 

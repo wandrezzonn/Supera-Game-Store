@@ -31,8 +31,6 @@ public class ProductController {
 	
 	@GetMapping("/add/{idProduct}")
 	public ResponseEntity<List<ShoppingCart>> shoppingCart(@PathVariable("idProduct") Long idProduct){
-		return ResponseEntity.ok(actions.add(idProduct));
+		return actions.add(idProduct);
 	}
-	
-
 }
