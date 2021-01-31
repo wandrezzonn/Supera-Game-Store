@@ -22,7 +22,7 @@ public class ShoppingCartActions {
 
 	public ShoppingCartActions() {}
 	
-	public ResponseEntity<List<ShoppingCart>> add(Long idProduct) {
+	public ResponseEntity<List<ShoppingCart>> addToShoppingCart(Long idProduct) {
 		Optional<Product> product = productService.findById(idProduct);
 		if (product.isPresent()) {
 			ShoppingCart shoppingCart = new ShoppingCart();
@@ -57,7 +57,7 @@ public class ShoppingCartActions {
 		
 	}
 	
-	public List<ShoppingCart> myCart(){
+	public List<ShoppingCart> myShoppingCart(){
 		return shoppingCartList;
 	}
 

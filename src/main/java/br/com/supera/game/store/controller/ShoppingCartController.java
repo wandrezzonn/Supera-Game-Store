@@ -22,7 +22,7 @@ public class ShoppingCartController {
 	@GetMapping("/shoppingcart")
 	public ResponseEntity<List<ShoppingCart>> shoppingCart(){
 		
-		return ResponseEntity.ok(actions.myCart());
+		return ResponseEntity.ok(actions.myShoppingCart());
 	}
 	
 	@GetMapping("/shoppingcart/{idProduct}")
