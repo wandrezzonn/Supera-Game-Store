@@ -36,7 +36,7 @@ Alteração para mais ou para menos poderá ser realizada na classe PageableConf
 #### Adiciona um produto no carrinho pelo id (tipo inteiro).
 Exemplo: /products/add/1
 * /products/add/id
-#### Remove um produto do carrinho pelo id (tipo inteiro).
+#### Remove um produto do carrinho pelo id (tipo inteiro) e devolve os itens restante no carrinho.
 Exemplo: /products/shoppingcart/1
 * /products/shoppingcart/id
 #### Mostra todos os produtos do carrinho, valor total da compra, valor total do frete, quantidade de produtos no carrinho.
