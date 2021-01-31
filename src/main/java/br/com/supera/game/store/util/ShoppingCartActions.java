@@ -21,7 +21,7 @@ public class ShoppingCartActions {
 	@Autowired private ProductService productService;
 
 	public ShoppingCartActions() {}
-
+	
 	public ResponseEntity<List<ShoppingCart>> add(Long idProduct) {
 		Optional<Product> product = productService.findById(idProduct);
 		if (product.isPresent()) {
@@ -42,6 +42,18 @@ public class ShoppingCartActions {
 
 		return ResponseEntity.notFound().build();
 
+	}
+	
+	
+	public ResponseEntity<List<ShoppingCart>> removeProduct(Long id){
+	      for(int i = 0; i <shoppingCartList.size(); i++) {
+	    	  if(shoppingCartList.get(i).getProducts().getId() == id) {
+	    		  shoppingCartList.remove(i);
+	    	  }
+	      }
+	      
+		return ResponseEntity.ok(shoppingCartList);
+		
 	}
 
 }
