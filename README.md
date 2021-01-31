@@ -11,7 +11,11 @@ Supera Game Store - Avaliação Java
 - Listar todos os produtos
     - Adicionar ou remover produtos do carrinho de compras.
      - Verificar checkout: valor total da compra, quantidade de itens, valor do frete, produtos no carrinho
-     
+## Projeto usa Maven:
+* ./mvnw clean package :: compilado e empacota o código
+
+## Por padrão o projeto rodará na porta 8080
+Usando o comando java -jar SuperaGameStore-0.0.1-SNAPSHOT.jar
 ### Endpoints para requisições  
 ##### Metodo HTTP suportado GET
 #### Lista todos os prududos limitado a 15.
