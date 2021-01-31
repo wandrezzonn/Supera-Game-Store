@@ -49,11 +49,16 @@ public class ShoppingCartActions {
 	      for(int i = 0; i <shoppingCartList.size(); i++) {
 	    	  if(shoppingCartList.get(i).getProducts().getId() == id) {
 	    		  shoppingCartList.remove(i);
+	    		  return ResponseEntity.ok(shoppingCartList);
 	    	  }
 	      }
 	      
-		return ResponseEntity.ok(shoppingCartList);
+	      return ResponseEntity.notFound().build();
 		
+	}
+	
+	public List<ShoppingCart> myCart(){
+		return shoppingCartList;
 	}
 
 }
