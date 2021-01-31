@@ -1,6 +1,5 @@
 package br.com.supera.game.store.util;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +13,6 @@ import br.com.supera.game.store.service.ProductService;
 
 @Service
 public class ShoppingCartActions {
-
-	private BigDecimal freight = new BigDecimal("10.00");
 	private List<ShoppingCart> shoppingCartList = new ArrayList<ShoppingCart>();
 	
 	@Autowired private ProductService productService;
@@ -26,16 +23,10 @@ public class ShoppingCartActions {
 		Optional<Product> product = productService.findById(idProduct);
 		if (product.isPresent()) {
 			ShoppingCart shoppingCart = new ShoppingCart();
-			shoppingCart.setProducts(product.get());
 			shoppingCart.setSubtotal(product.get().getPrice());
-			if (product.get().getPrice().compareTo(product.get().getPrice()) < 250.00) {
-				shoppingCart.setFreight(freight);
-				shoppingCart.setTotal(product.get().getPrice().add(freight));
-
-			} else {
-				shoppingCart.setFreight(new BigDecimal(0.0));
-			}
-
+			shoppingCart.setFreight(Freight.freight(product.get()));
+			shoppingCart.setTotal(product.get().getPrice().add(Freight.freight(product.get())));
+			shoppingCart.setProducts(product.get());
 			shoppingCartList.add(shoppingCart);
 			return ResponseEntity.ok(shoppingCartList);
 		}
@@ -52,9 +43,7 @@ public class ShoppingCartActions {
 	    		  return ResponseEntity.ok(shoppingCartList);
 	    	  }
 	      }
-	      
 	      return ResponseEntity.notFound().build();
-		
 	}
 	
 	public List<ShoppingCart> myShoppingCart(){

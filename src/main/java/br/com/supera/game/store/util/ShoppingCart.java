@@ -9,7 +9,6 @@ public class ShoppingCart {
 	private BigDecimal subtotal;
 	private BigDecimal total;
 	
-
 	public ShoppingCart() {
 
 	}

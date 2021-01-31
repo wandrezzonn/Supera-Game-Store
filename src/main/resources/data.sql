@@ -17,3 +17,4 @@ INSERT INTO product(name,price,score,image) values('FIFA 18','195.39',325,'fifa-
 INSERT INTO product(name,price,score,image) values('Horizon Zero Dawn','115.8',290,'horizon-zero-dawn.png');
 INSERT INTO product(name,price,score,image) values('Grand Theft Auto V','69.99',350,'grand-theft-auto5.png');
 INSERT INTO product(name,price,score,image) values('Cyberpunk 2077','179.90',90,'cyberpunk-2077.png');
+INSERT INTO product(name,price,score,image) values('Game Returnal','290.39',180,'game-returnal.png');
