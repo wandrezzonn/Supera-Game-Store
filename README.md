@@ -18,7 +18,7 @@ Supera Game Store - Avaliação Java
 Usando o comando java -jar SuperaGameStore-0.0.1-SNAPSHOT.jar
 ### Endpoints para requisições  
 ##### Metodo HTTP suportado GET
-#### Lista todos os prududos limitado a 15.
+#### Lista todos os prududos em representação JSON limitado a 15 items.
 Alteração para mais ou para menos poderá ser realizada na classe PageableConfiguration.java
 * /products
 #### Lista todos os produtos ordenado por preço.
